@@ -48,7 +48,7 @@ int main() {
 	client_addr_len = sizeof(client_addr);
 	accept(server_fd, (struct sockaddr *) &client_addr, &client_addr_len);
 	printf("Client connected\n");
-	send(client_fd, "HTTP/1.1 200 OK\r\n\r\n", 23, 0);
+	send(client_addr, "HTTP/1.1 200 OK\r\n\r\n", 23, 0);
 	close(server_fd);
 	
 	return 0;
